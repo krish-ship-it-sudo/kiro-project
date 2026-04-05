@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckInSafe - Safety Check-In App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ CheckInSafe</h1>
+            <p class="tagline">Your safety companion</p>
+        </header>
+
+        <main>
+            <div class="alert-banner" id="alertBanner" style="display: none;">
+                <span class="alert-icon">⚠️</span>
+                <span id="alertMessage"></span>
+            </div>
+
+            <div class="status-card" id="statusCard">
+                <h2>Current Status</h2>
+                <div id="statusContent">
+                    <p class="status-idle">No active check-in</p>
+                </div>
+            </div>
+
+            <div class="check-in-form">
+                <h2>Create Check-In</h2>
+                <form id="checkInForm">
+                    <div class="form-group">
+                        <label for="location">Destination</label>
+                        <input type="text" id="location" placeholder="e.g., Home, Office, Friend's place" maxlength="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expectedTime">Expected Arrival Time</label>
+                        <input type="time" id="expectedTime" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Start Check-In</button>
+                </form>
+            </div>
+
+            <div class="safe-button-container" id="safeButtonContainer" style="display: none;">
+                <button id="safeButton" class="btn btn-safe">✓ I reached safely</button>
+            </div>
+
+            <div class="history-section">
+                <div class="history-header">
+                    <h2>Check-In History</h2>
+                    <button id="clearHistory" class="btn btn-secondary">Clear History</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <p class="empty-state">No check-ins yet</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Stay safe, check in regularly 💚</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
